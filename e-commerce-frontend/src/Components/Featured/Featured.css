@@ -1,0 +1,35 @@
+.featured{
+    margin-right: 100px;
+    margin-left: 100px;
+}
+.featured-img img{
+    margin-top: 50px;
+    height: 700px;
+    width: 900px;
+}
+.container{
+    display: flex;
+}
+.btn-featured{
+    margin: 20px;
+    background: black;
+    color: white;
+    border: 0px solid black;
+    border-radius: 55px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.btn-featured:hover{
+    background: rgb(36, 35, 35);
+    color: rgb(175, 159, 159);
+}
+.featured-txt{
+    margin-top: 160px;
+    margin-left: 60px;
+}
+.featured-img img:hover{
+    transform: scale(1.05);
+    transition: 0.8s;
+    opacity: .7;
+
+}
