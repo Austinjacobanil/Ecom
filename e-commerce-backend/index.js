@@ -10,12 +10,9 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
-// Database Connection Wih MongoDB
-mongoose.connect("mongodb+srv://austin:austin123@atlascluster.ldrmc0u.mongodb.net/e-commerce");
-// paste your mongoDB Connection string above with password
-// password should not contain '@' special character
 
-//Image Storage Engine 
+mongoose.connect("mongodb+srv://austin:austin123@atlascluster.ldrmc0u.mongodb.net/e-commerce");
+
 const storage = multer.diskStorage({
     destination: './upload/images',
     filename: (req, file, cb) => {
@@ -32,7 +29,7 @@ app.post("/upload", upload.single('product'), (req, res) => {
 })
 app.use('/images', express.static('upload/images'));
 
-// MiddleWare to fetch user from database
+
 const fetchuser = async (req, res, next) => {
   const token = req.header("auth-token");
   if (!token) {
@@ -48,7 +45,6 @@ const fetchuser = async (req, res, next) => {
 };
 
 
-// Schema for creating user model
 const Users = mongoose.model("Users", {
   name: {
     type: String,
